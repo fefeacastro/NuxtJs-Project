@@ -1,3 +1,18 @@
 <template>
-  <h1>Hello world!</h1>
+  <Blog />
 </template>
+
+<script>
+import '~/assets/style.css'
+import Blog from '~/components/Blog.vue'
+
+export default {
+  name: 'App',
+  components: {
+    Blog
+  }
+}
+</script>
+
+<style>
+</style>
