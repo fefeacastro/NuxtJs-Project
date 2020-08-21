@@ -1,19 +1,26 @@
 <template>
     <div class="container">
-        <h2>Posts</h2>
-        <hr />
-        <div class="list-group">
-            <p v-if="posts.length <= 0">Nenhum Post</p>
-            <div class="list-group-item card" v-for="(post, index) in allPosts"  v-bind:key="post">
-                <h2><strong>{{ post.title }}</strong></h2>
-                <p>{{post.postMessage}}</p>
-                <div>
-                    <a href="#" title="Excluir" v-on:click.prevent="removePost(index)">Excluir</a>
+        <header>
+            <div class="header">
+                <h1>Blog</h1>
+            </div>
+        </header>
+        <body>
+            <h2>Posts</h2>
+            <hr />
+            <div class="list-group">
+                <p v-if="posts.length <= 0">Nenhum Post</p>
+                <div class="list-group-item card" v-for="(post, index) in allPosts"  v-bind:key="post">
+                    <h2><strong>{{ post.title }}</strong></h2>
+                    <p>{{post.postMessage}}</p>
+                    <div>
+                        <a href="#" title="Excluir" v-on:click.prevent="removePost(index)">Excluir</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <hr />
-        <NewPost v-on:add-post="addPost"></NewPost>
+            <hr />
+            <NewPost v-on:add-post="addPost"></NewPost>
+        </body>
     </div>
 </template>
 
